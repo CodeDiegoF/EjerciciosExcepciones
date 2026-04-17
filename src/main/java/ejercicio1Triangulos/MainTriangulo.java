@@ -50,8 +50,6 @@ public class MainTriangulo {
                          System.err.println(e.getMessage());
                     }
                }
-          }catch (FileNotFoundException e) {
-               System.err.println("Archivo no encontrado: " + e.getMessage());
           }
 
           // Imprimir todos los triángulos válidos encontrados.

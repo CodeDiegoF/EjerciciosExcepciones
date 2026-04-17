@@ -36,24 +36,23 @@ public class Triangulo {
           this.lado3 = lado3;
      }
      
-     public boolean comprobarDesigualdadTriangular(){
+     public void comprobarDesigualdadTriangular(){
           // Validar lados positivos y desigualdad triangular.
           if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
                throw new TrianguloException(this);
           } else if (lado1 + lado2 <= lado3 || lado1 + lado3 <= lado2 || lado2 + lado3 <= lado1) {
                throw new TrianguloException(this);
-          }else
+          }else{
                System.out.println("Triangulo válido con lados: " + lado1 + ", " + lado2 + ", " + lado3);
-               return true;
+          }
      }
      
      public static Triangulo factoriaTriangulo(double lado1, double lado2, double lado3){
           // Crear y validar el triángulo antes de devolverlo.
           Triangulo triangulo = new Triangulo(lado1, lado2, lado3);
           
-          if(!triangulo.comprobarDesigualdadTriangular()){
-               throw new TrianguloException(triangulo);
-          };
+          triangulo.comprobarDesigualdadTriangular();
+          
           return triangulo;
      }
      
