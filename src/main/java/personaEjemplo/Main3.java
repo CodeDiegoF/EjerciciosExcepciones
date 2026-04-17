@@ -8,10 +8,8 @@ import java.util.Scanner;
 
 public class Main3 {
      public static void main(String[] args) {
-          Scanner sc = new Scanner(System.in);
-          try {
+          try (Scanner sc = new Scanner(new File("ficheros/personas.csv"))) {
                List<Persona> personas = new ArrayList<>();
-               sc = new Scanner(new File("ficheros/personas.csv"));
                while (sc.hasNextLine()) {
                     String linea = sc.nextLine();
                     String[] tokens = linea.split(",");
@@ -34,9 +32,6 @@ public class Main3 {
                personas.forEach(System.out::println);
           } catch (FileNotFoundException e) {
                System.err.println("Archivo no encontrado: " + e.getMessage());
-          }finally {
-               sc.close();
-               System.out.println("Cerrando el scanner");
           }
      }
      
