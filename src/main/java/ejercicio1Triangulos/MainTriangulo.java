@@ -9,24 +9,27 @@ import java.util.Scanner;
 
 public class MainTriangulo {
      public static void main(String[] args) throws FileNotFoundException {
+          // Lista donde se guardan los triangulos válidos.
           List<Triangulo> triangulos = new ArrayList<>();
+          // Abrir el CSV y cerrarlo automáticamente al terminar.
           try (Scanner sc = new Scanner(new File("ficheros/triangulos.csv"))) {
                boolean primeraLinea = true;
 
                while (sc.hasNextLine()) {
                     String linea = sc.nextLine().trim();
                     
-                    if (linea.isEmpty()) {
+                    if (linea.isEmpty()) { // Saltar líneas vacías
                          continue;
                     }
                     
-                    if (primeraLinea) {
+                    if (primeraLinea) { // Saltar cabecera
                          primeraLinea = false;
                          if (linea.toLowerCase().startsWith("lado1")) {
                               continue;
                          }
                     }
 
+                    // Separar la línea en los tres lados del triángulo.
                     String[] tokens = linea.split(",");
                     if (tokens.length < 3) {
                          System.err.println("Formato inválido en la línea: " + linea);
@@ -38,6 +41,7 @@ public class MainTriangulo {
                          double lado2 = Double.parseDouble(tokens[1]);
                          double lado3 = Double.parseDouble(tokens[2]);
 
+                         // La factoria válida y crea el triángulo.
                          Triangulo triangulo = Triangulo.factoriaTriangulo(lado1, lado2, lado3);
                          triangulos.add(triangulo);
                     } catch (NumberFormatException e) {
@@ -50,7 +54,7 @@ public class MainTriangulo {
                System.err.println("Archivo no encontrado: " + e.getMessage());
           }
 
+          // Imprimir todos los triángulos válidos encontrados.
           triangulos.forEach(t -> System.out.println("Triangulo válido con lados: " + t.getLado1() + ", " + t.getLado2() + ", " + t.getLado3()));
      }
 }
-

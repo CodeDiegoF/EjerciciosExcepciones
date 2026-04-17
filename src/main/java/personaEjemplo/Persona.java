@@ -1,6 +1,7 @@
 package personaEjemplo;
 
 public class Persona {
+     // Modelo simple con nombre y edad.
      private String nombre;
      private int edad;
      
@@ -27,6 +28,7 @@ public class Persona {
      
      @Override
      public String toString() {
+          // Representacion compacta para mostrar en consola.
           return nombre + " || " + edad + " años";
      }
 }
