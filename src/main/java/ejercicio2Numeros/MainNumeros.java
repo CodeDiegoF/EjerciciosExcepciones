@@ -21,10 +21,6 @@ public class MainNumeros {
                     }
                     
                     String[] tokens = linea.split(",");
-                    if(tokens.length < 1){
-                         System.err.println("Formato inválido en la línea: " + linea);
-                         continue;
-                    }
                     
                     try{
                          // Convertir el primer token según el sistema numérico.
