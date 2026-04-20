@@ -22,7 +22,7 @@ public class Main1 {
                String[] tokens = linea.split(",");
                String nombre = tokens[0];
                String sEdad = tokens[1];
-               // Filtrar edades que no sean numericas de 1 o 2 digitos.
+               // Filtrar edades que no sean numéricas de 1 o 2 dígitos.
                if (sEdad.matches("[1-9][0-9]?")) { // Solo edades 1..99
                     int edad = Integer.parseInt(sEdad);
                     personas.add(new Persona(nombre, edad));

@@ -17,11 +17,11 @@ public class MainTriangulo {
 
                while (sc.hasNextLine()) {
                     String linea = sc.nextLine().trim();
-                    
+
                     if (linea.isEmpty()) { // Saltar líneas vacías
                          continue;
                     }
-                    
+
                     if (primeraLinea) { // Saltar cabecera
                          primeraLinea = false;
                          if (linea.toLowerCase().startsWith("lado1")) {
@@ -41,7 +41,7 @@ public class MainTriangulo {
                          double lado2 = Double.parseDouble(tokens[1]);
                          double lado3 = Double.parseDouble(tokens[2]);
 
-                         // La factoria válida y crea el triángulo.
+                         // La factoria valida y crea el triángulo.
                          Triangulo triangulo = Triangulo.factoriaTriangulo(lado1, lado2, lado3);
                          triangulos.add(triangulo);
                     } catch (NumberFormatException e) {
