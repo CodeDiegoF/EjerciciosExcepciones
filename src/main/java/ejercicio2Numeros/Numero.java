@@ -54,7 +54,7 @@ public class Numero {
      
      class BinaryException extends RuntimeException{
           public BinaryException(String valor) {
-               super("Formato incorrecto: " + valor + " no es un número hexadecimal válido.");
+               super("Formato incorrecto: " + valor + " no es un número binario válido.");
           }
      }
 }
